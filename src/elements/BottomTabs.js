@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Information from '../src/components/Information';
+import Information from '../components/Information';
 
 const Tab = createBottomTabNavigator();
 
