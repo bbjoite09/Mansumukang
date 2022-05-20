@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import r5 from '../assets/activity/foo.png';
+import r5 from '../assets/activity/r5.png';
 import mainLogo from '../assets/activity/logo.png';
 
 const Activity = () => {

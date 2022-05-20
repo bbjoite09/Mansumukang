@@ -1,23 +1,35 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Image, Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import News from '../elements/Information/News';
+import mainLogo from '../assets/information/logo.png';
 
 const Information = () => {
   return (
-    <SafeAreaView>
-      <View style={styles.Container}>
-        <Text style={{fontSize: 50}}>Hello</Text>
-      </View>
+    <SafeAreaView style={styles.container}>
+      <Image
+        source={mainLogo}
+        // style={{resizeMode: 'cover', transform: [{scale: 0.67}]}}
+        style={{
+          width: '100%',
+          resizeMode: 'contain',
+          alignItems: 'flex-start',
+          marginTop: '-10%',
+        }}
+      />
+      <News />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  Container: {
+  container: {
     display: 'flex',
+    width: Dimensions.get('window').width,
     height: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 10,
   },
 });
 
