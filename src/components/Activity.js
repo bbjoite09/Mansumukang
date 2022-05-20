@@ -11,6 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import r5 from '../assets/activity/r5.png';
 import mainLogo from '../assets/activity/logo.png';
 
+// eslint-disable-next-line react/prop-types
 const Activity = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -29,7 +30,8 @@ const Activity = ({navigation}) => {
           style={styles.roundButton}
           onPress={() => {
             console.log();
-            navigation.navigate('ActivityDetail');
+            // eslint-disable-next-line react/prop-types
+            navigation.navigate('CheckList');
           }}>
           <Text style={styles.buttonText}>5R Check List</Text>
         </Pressable>

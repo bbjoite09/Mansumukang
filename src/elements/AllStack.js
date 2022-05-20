@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 const BottomTabs = () => {
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="diary" component={CheckList} />
+      <Tab.Screen name="diary" component={Information} />
       <Tab.Screen name="activity" component={Activity} />
       <Tab.Screen name="information" component={Information} />
     </Tab.Navigator>
@@ -21,7 +21,7 @@ const Stack = createNativeStackNavigator();
 
 const AllStack = () => {
   return (
-    <Stack.Navigator initialRouteName="TabNavi">
+    <Stack.Navigator initialRouteName="BottomTabs">
       <Stack.Screen
         name="BottomTabs"
         component={BottomTabs}
@@ -35,7 +35,10 @@ const AllStack = () => {
       <Stack.Screen
         name="CheckList"
         component={CheckList}
-        options={{headerShown: true}}
+        options={{
+          headerShown: true,
+          headerTitle: '',
+        }}
       />
     </Stack.Navigator>
   );
