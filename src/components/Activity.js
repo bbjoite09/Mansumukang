@@ -39,6 +39,8 @@ const Activity = ({navigation}) => {
           style={styles.roundButton}
           onPress={() => {
             console.log('click');
+            // eslint-disable-next-line react/prop-types
+            navigation.navigate('R5Info');
           }}>
           <Text style={styles.buttonText}>5R Information</Text>
         </Pressable>
