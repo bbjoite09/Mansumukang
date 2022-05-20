@@ -11,7 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import r5 from '../assets/activity/r5.png';
 import mainLogo from '../assets/activity/logo.png';
 
-const Activity = () => {
+const Activity = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -29,6 +29,7 @@ const Activity = () => {
           style={styles.roundButton}
           onPress={() => {
             console.log();
+            navigation.navigate('ActivityDetail');
           }}>
           <Text style={styles.buttonText}>5R Check List</Text>
         </Pressable>

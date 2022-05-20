@@ -1,6 +1,6 @@
 import React from 'react';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
-import BottomTabs from './src/elements/BottomTabs';
+import AllStack from './src/elements/AllStack';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
           background: 'white',
         },
       }}>
-      <BottomTabs />
+      <AllStack />
     </NavigationContainer>
   );
 };
