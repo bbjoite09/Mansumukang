@@ -11,7 +11,7 @@ const CheckList = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.headerText}>5R Score Chart</Text>
+      <Text style={styles.headerText}>5R Score</Text>
       <View style={styles.bodyContainer}>
         <TextInput
           style={styles.textInput}
@@ -58,44 +58,49 @@ const CheckList = () => {
           placeholder="Rot."
           keyboardType="numeric"
         />
-        <Pressable title="제출" onPress={() => {}} />
-        <Text style={styles.showText}>
-          {Math.ceil(
-            ((2 / 36) * Number(number1) +
-              (3 / 36) * Number(number2) +
-              (2 / 36) * Number(number3) +
-              (3 / 36) * Number(number4) +
-              (2 / 36) * Number(number5)) *
-              100,
-          )}
-          점
-        </Text>
       </View>
+      <Text style={styles.showText}>
+        🔥{' '}
+        {Math.ceil(
+          ((2 / 36) * Number(number1) +
+            (3 / 36) * Number(number2) +
+            (2 / 36) * Number(number3) +
+            (3 / 36) * Number(number4) +
+            (2 / 36) * Number(number5)) *
+            100,
+        )}
+        점
+      </Text>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFEAD0',
+    backgroundColor: '#728F60',
     paddingHorizontal: 30,
     flex: 1,
   },
   headerText: {
-    paddingTop: 50,
     alignItems: 'center',
     fontSize: 30,
+    color: 'white',
+    fontWeight: '600',
   },
   bodyContainer: {
+    marginTop: 30,
     backgroundColor: '#FDF5DC',
     paddingHorizontal: 20,
-    marginVertical: 30,
-    flex: 1,
+    marginVertical: 20,
+    height: '60%',
+    display: 'flex',
+    justifyContent: 'center',
+    borderRadius: 10,
   },
   textInput: {
-    marginTop: 20,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    marginTop: 15,
+    marginBottom: 15,
+    paddingHorizontal: 15,
     height: 40,
     borderRadius: 10,
     borderColor: 'gray',
@@ -104,6 +109,8 @@ const styles = StyleSheet.create({
   showText: {
     marginTop: 10,
     fontSize: 25,
+    color: 'white',
+    fontWeight: '600',
   },
 });
 
