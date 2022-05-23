@@ -1,6 +1,31 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Slick from 'react-native-slick';
+import {Config} from 'react-native-config';
+import axios from 'axios';
+
+const CLIENT_ID = Config.CLIENT_ID;
+const CLIENT_SECRET = Config.CLIENT_SECRET;
+const url = 'https://openapi.naver.com/v1/search/news.json';
+
+const headers = {
+  'X-Naver-Client-Id': CLIENT_ID,
+  'X-Naver-Client-Secret': CLIENT_SECRET,
+};
+
+const ecoNews = axios
+  .get(url, {
+    params: {query: '제로웨이스트', display: 5, start: 1, sort: 'date'},
+    headers,
+  })
+  .then(res => {
+    return res.data;
+  })
+  .catch(err => console.log(err));
+
+ecoNews.then(res => {
+  console.log(res);
+});
 
 const News = () => {
   return (
