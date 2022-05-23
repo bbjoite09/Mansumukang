@@ -3,6 +3,7 @@ import {StyleSheet, Image, Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import News from '../elements/Information/News';
 import mainLogo from '../assets/information/logo.png';
+import Mypage from '../elements/Information/MyPage';
 
 const Information = () => {
   return (
@@ -17,6 +18,7 @@ const Information = () => {
           marginTop: '-10%',
         }}
       />
+      <Mypage />
       <News />
     </SafeAreaView>
   );
