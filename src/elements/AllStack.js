@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Information from '../components/Information';
 import Activity from '../components/Activity';
 import CheckList from '../components/CheckList';
+import R5Info from '../components/R5Info';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +36,14 @@ const AllStack = () => {
       <Stack.Screen
         name="CheckList"
         component={CheckList}
+        options={{
+          headerShown: true,
+          headerTitle: '',
+        }}
+      />
+      <Stack.Screen
+        name="R5Info"
+        component={R5Info}
         options={{
           headerShown: true,
           headerTitle: '',
