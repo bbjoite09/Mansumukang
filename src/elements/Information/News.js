@@ -15,7 +15,7 @@ const headers = {
 
 const ecoNews = axios
   .get(url, {
-    params: {query: '제로웨이스트', display: 5, start: 1, sort: 'date'},
+    params: {query: '제로웨이스트', display: 6, start: 1, sort: 'date'},
     headers,
   })
   .then(res => {
@@ -42,7 +42,19 @@ const News = () => {
         }}>
         🌏 매일 녹색 소식
       </Text>
-      <Slick showsButtons={true} showsPagination={false} loop={true}>
+      <Slick
+        showsButtons={true}
+        showsPagination={false}
+        nextButton={
+          <Text style={{fontSize: 28, fontWeight: '900', color: 'white'}}>
+            ＞
+          </Text>
+        }
+        prevButton={
+          <Text style={{fontSize: 28, fontWeight: '900', color: 'white'}}>
+            ＜
+          </Text>
+        }>
         {newsList ? (
           newsList.map((data, idx) => (
             <View
@@ -85,13 +97,14 @@ const slickStyles = StyleSheet.create({
     flex: 1,
     padding: '10%',
     justifyContent: 'center',
-    backgroundColor: '#92BBD9',
+    backgroundColor: '#A98D8D',
   },
   slide2: {
     flex: 1,
     padding: '10%',
+
     justifyContent: 'center',
-    backgroundColor: '#A5A1B3',
+    backgroundColor: '#92BBC0',
   },
   newsTitle: {
     color: '#fff',
