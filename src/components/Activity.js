@@ -24,7 +24,10 @@ const Activity = ({navigation}) => {
           marginTop: '-10%',
         }}
       />
-      <Image style={{width: '90%', height: '50%'}} source={r5} />
+      <Image
+        style={{width: '90%', height: '50%', marginTop: '-10%'}}
+        source={r5}
+      />
       <View style={styles.footer}>
         <Pressable
           style={styles.roundButton}
@@ -33,7 +36,7 @@ const Activity = ({navigation}) => {
             // eslint-disable-next-line react/prop-types
             navigation.navigate('CheckList');
           }}>
-          <Text style={styles.buttonText}>5R Check List</Text>
+          <Text style={styles.buttonText}>5R 점수 계산</Text>
         </Pressable>
         <Pressable
           style={styles.roundButton}
@@ -42,7 +45,7 @@ const Activity = ({navigation}) => {
             // eslint-disable-next-line react/prop-types
             navigation.navigate('R5Info');
           }}>
-          <Text style={styles.buttonText}>5R Information</Text>
+          <Text style={styles.buttonText}>5R 이란?</Text>
         </Pressable>
       </View>
     </SafeAreaView>
@@ -63,21 +66,21 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '20%',
     display: 'flex',
-    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-evenly',
-    marginTop: '10%',
   },
   roundButton: {
-    width: '45%',
+    width: '65%',
     height: '40%',
     backgroundColor: '#405C2F',
     borderRadius: 100,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: '5%',
   },
   buttonText: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '600',
     color: 'white',
   },

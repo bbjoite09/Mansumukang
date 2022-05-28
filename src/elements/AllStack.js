@@ -3,8 +3,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Information from '../components/Information';
 import Activity from '../components/Activity';
-import CheckList from '../components/CheckList';
-import R5Info from '../components/R5Info';
+import CheckList from './activity/CheckList';
+import R5Info from './activity/R5Info';
 
 const Tab = createBottomTabNavigator();
 
