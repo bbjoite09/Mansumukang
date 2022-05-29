@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {Rating} from 'react-native-ratings';
@@ -12,13 +13,15 @@ const CheckList = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require('../../assets/activity/countTitle.png')} />
+      <Image
+        source={require('../../assets/activity/countTitle.png')}
+        style={{marginTop: '10%'}}
+      />
       <View style={styles.bodyContainer}>
         <View style={styles.rowContainer}>
           <Text style={styles.ratingLabel}>Refuse</Text>
           <Rating
             type="custom"
-            // eslint-disable-next-line no-undef
             ratingImage={require('../../assets/activity/leaf.png')}
             ratingColor="#77B255"
             ratingBackgroundColor="#c8c7c8"

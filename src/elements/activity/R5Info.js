@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import {StyleSheet, ScrollView, Text, View, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -5,39 +6,64 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 const R5Info = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require('../../assets/activity/countTitle.png')} />
       <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}>
+        <Image
+          source={require('../../assets/activity/countTitle.png')}
+          style={{marginTop: '10%'}}
+        />
         <View style={{marginTop: '5%'}}>
           <Text style={styles.headerText}>1. Refuse</Text>
           <View style={styles.bodyContainer}>
-            <Text style={{fontSize: 17}}>거절하기</Text>
-            <Text style={{fontSize: 15}}>
-              사용하지 않거나 필요없는 제품들은 거절하기
+            <Text style={styles.bodyTop}>
+              Say no to things you do not need, such as disposable cups and
+              plastic straws.
             </Text>
+            <Image
+              style={{width: '90%', height: '75%'}}
+              source={require('../../assets/activity/Refuse.png')}
+            />
           </View>
           <Text style={styles.headerText}>2. Reduce</Text>
           <View style={styles.bodyContainer}>
-            <Text style={{fontSize: 17}}>줄이기</Text>
-            <Text style={{fontSize: 15}}>
-              거절하기 힘든 것들은 사용량을 줄이기
+            <Text style={styles.bodyTop}>
+              Purchasing only the essentials and buying products with little
+              packaging.
             </Text>
+            <Image
+              style={{width: '90%', height: '75%'}}
+              source={require('../../assets/activity/Reduce.png')}
+            />
           </View>
           <Text style={styles.headerText}>3. Reuse</Text>
           <View style={styles.bodyContainer}>
-            <Text style={{fontSize: 17}}>재생하기</Text>
-            <Text style={{fontSize: 15}}>
-              수리하거나 중고품을 구입해 재사용하기
+            <Text style={styles.bodyTop}>
+              Reusing something that can be reused.
             </Text>
+            <Image
+              style={{width: '90%', height: '75%'}}
+              source={require('../../assets/activity/Reuse.png')}
+            />
           </View>
           <Text style={styles.headerText}>4. Recycle</Text>
           <View style={styles.bodyContainer}>
-            <Text style={{fontSize: 17}}>재활용하기</Text>
-            <Text style={{fontSize: 15}}>새로운 용도로 물품 재활용하기</Text>
+            <Text style={styles.bodyTop}>
+              Recycle products that can be recycled.
+            </Text>
+            <Image
+              style={{width: '90%', height: '75%'}}
+              source={require('../../assets/activity/Recycle.png')}
+            />
           </View>
           <Text style={styles.headerText}>5. Rot</Text>
           <View style={styles.bodyContainer}>
-            <Text style={{fontSize: 17}}>썩히기</Text>
-            <Text style={{fontSize: 15}}>생분해되는 상품 이용하기</Text>
+            <Text style={styles.bodyTop}>
+              In the case of food that cannot be recycled, collect only food and
+              rot to make feed.
+            </Text>
+            <Image
+              style={{height: '65%', resizeMode: 'contain'}}
+              source={require('../../assets/activity/Rot.png')}
+            />
           </View>
         </View>
       </ScrollView>
@@ -62,8 +88,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDF5DC',
     paddingHorizontal: 20,
     marginVertical: 20,
-    height: 200,
+    height: 220,
     borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
+  bodyTop: {
+    fontSize: 15,
   },
 });
 
