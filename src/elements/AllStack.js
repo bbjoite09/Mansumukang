@@ -5,15 +5,67 @@ import Information from '../components/Information';
 import Activity from '../components/Activity';
 import CheckList from './activity/CheckList';
 import R5Info from './activity/R5Info';
+import {Image, Text} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="diary" component={Information} />
-      <Tab.Screen name="activity" component={Activity} />
-      <Tab.Screen name="information" component={Information} />
+      <Tab.Screen
+        name="녹색일기"
+        component={Information}
+        options={{
+          tabBarIcon: ({focused}) =>
+            !focused ? (
+              <Image
+                source={require('../assets/shared/diary_no.png')}
+                style={{width: 30, height: 30}}
+              />
+            ) : (
+              <Image
+                source={require('../assets/shared/diary.png')}
+                style={{width: 30, height: 30}}
+              />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="녹색활동"
+        component={Activity}
+        options={{
+          tabBarIcon: ({focused}) =>
+            !focused ? (
+              <Image
+                source={require('../assets/shared/activity_no.png')}
+                style={{width: 30, height: 30}}
+              />
+            ) : (
+              <Image
+                source={require('../assets/shared/activity.png')}
+                style={{width: 30, height: 30}}
+              />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="정보"
+        component={Information}
+        options={{
+          tabBarIcon: ({focused}) =>
+            !focused ? (
+              <Image
+                source={require('../assets/shared/info_no.png')}
+                style={{width: 30, height: 30}}
+              />
+            ) : (
+              <Image
+                source={require('../assets/shared/info.png')}
+                style={{width: 30, height: 30}}
+              />
+            ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
