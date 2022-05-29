@@ -27,6 +27,7 @@ const CheckList = () => {
             startingValue={0}
             onFinishRating={rating => {
               setNumber1(rating);
+              console.log(rating);
             }}
             style={{paddingVertical: 10}}
           />
@@ -111,11 +112,11 @@ const CheckList = () => {
         <Text style={[styles.showText, {color: 'black', marginTop: -1}]}>
           🔎 총 합 :{' '}
           {Math.ceil(
-            ((2 / 36) * Number(number1) +
-              (3 / 36) * Number(number2) +
-              (2 / 36) * Number(number3) +
-              (3 / 36) * Number(number4) +
-              (2 / 36) * Number(number5)) *
+            ((2 / 60) * Number(number1) +
+              (3 / 60) * Number(number2) +
+              (2 / 60) * Number(number3) +
+              (3 / 60) * Number(number4) +
+              (2 / 60) * Number(number5)) *
               100,
           )}
           점 입니다.
