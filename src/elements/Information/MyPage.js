@@ -11,7 +11,7 @@ const Mypage = () => {
           fontWeight: '600',
           alignSelf: 'flex-start',
           marginLeft: '5%',
-          marginBottom: '5%',
+          color: 'black',
         }}>
         🌱 나의 기록 확인하기
       </Text>

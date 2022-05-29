@@ -18,14 +18,14 @@ const Activity = ({navigation}) => {
       <Image
         source={mainLogo}
         style={{
-          width: '100%',
           resizeMode: 'contain',
-          alignItems: 'flex-start',
-          marginTop: '-10%',
+          height: 160,
+          width: '100%',
+          marginBottom: '3%',
         }}
       />
       <Image
-        style={{width: '90%', height: '50%', marginTop: '-10%'}}
+        style={{width: '90%', height: '50%', marginTop: '-5%'}}
         source={r5}
       />
       <View style={styles.footer}>
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingTop: 10,
     position: 'relative',
+    marginTop: '-5%',
   },
   footer: {
     width: '100%',

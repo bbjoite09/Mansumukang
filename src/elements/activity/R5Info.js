@@ -6,8 +6,11 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 const R5Info = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require('../../assets/activity/countTitle.png')} />
       <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}>
+        <Image
+          source={require('../../assets/activity/countTitle.png')}
+          style={{marginTop: '10%'}}
+        />
         <View style={{marginTop: '5%'}}>
           <Text style={styles.headerText}>1. Refuse</Text>
           <View style={styles.bodyContainer}>
