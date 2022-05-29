@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import Slick from 'react-native-slick';
-import {Config} from 'react-native-config';
 import axios from 'axios';
+import React, {useState} from 'react';
+import {Linking, StyleSheet, Text, View} from 'react-native';
+import {Config} from 'react-native-config';
+import Slick from 'react-native-slick';
 
 const CLIENT_ID = Config.CLIENT_ID;
 const CLIENT_SECRET = Config.CLIENT_SECRET;
@@ -39,29 +39,24 @@ const News = () => {
           alignSelf: 'flex-start',
           marginLeft: '5%',
           marginBottom: '5%',
+          color: 'black',
         }}>
         🌏 매일 녹색 소식
       </Text>
-      <Slick
-        showsButtons={true}
-        showsPagination={false}
-        nextButton={
-          <Text style={{fontSize: 28, fontWeight: '900', color: 'white'}}>
-            ＞
-          </Text>
-        }
-        prevButton={
-          <Text style={{fontSize: 28, fontWeight: '900', color: 'white'}}>
-            ＜
-          </Text>
-        }>
+      <Slick showsButtons={true} showsPagination={false}>
         {newsList ? (
           newsList.map((data, idx) => (
             <View
               style={idx % 2 == 1 ? slickStyles.slide1 : slickStyles.slide2}
               key={idx}>
-              <Text style={slickStyles.newsTitle}>
-                {data.title.replace(/<[^>]*>?/gm, '').replace(/&quot;/g, '')}
+              <Text
+                style={slickStyles.newsTitle}
+                onPress={() => {
+                  Linking.openURL(data.link);
+                }}>
+                {data.title
+                  .replace(/<[^>]*>?/gm, '')
+                  .replace(/&quot;|&amp;/g, '')}
               </Text>
               <Text style={slickStyles.newsText}>
                 {data.description
@@ -74,8 +69,8 @@ const News = () => {
             </View>
           ))
         ) : (
-          <View style={slickStyles.slide1}>
-            <Text style={slickStyles.text}>뉴스 로딩 중</Text>
+          <View style={[slickStyles.slide1, {alignItems: 'center'}]}>
+            <Text style={slickStyles.newsLodingText}>뉴스 로딩 중...</Text>
           </View>
         )}
       </Slick>
@@ -85,8 +80,8 @@ const News = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: '10%',
     display: 'flex',
-    height: '45%',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -102,7 +97,6 @@ const slickStyles = StyleSheet.create({
   slide2: {
     flex: 1,
     padding: '10%',
-
     justifyContent: 'center',
     backgroundColor: '#92BBC0',
   },
@@ -122,6 +116,7 @@ const slickStyles = StyleSheet.create({
     color: '#fff',
     fontSize: 15,
   },
+  newsLodingText: {color: '#fff', fontSize: 21, fontWeight: 'bold'},
 });
 
 export default News;
