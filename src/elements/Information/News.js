@@ -81,6 +81,7 @@ const News = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: '10%',
+    height: 300,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
