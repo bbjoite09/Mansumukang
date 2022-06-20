@@ -17,7 +17,7 @@ const Mypage = () => {
       </Text>
       <LineChart
         data={{
-          labels: ['05/16', '05/17', '05/18', '05/19', '05/20', '05/21'],
+          labels: ['06/06', '06/07', '06/08', '06/09', '06/10', '06/11'],
           datasets: [
             {
               data: [80, 89, 90, 98, 100, 92],
@@ -28,12 +28,12 @@ const Mypage = () => {
         height={250}
         yAxisInterval={1} // optional, defaults to 1
         chartConfig={{
-          backgroundColor: '#8F6D82',
-          backgroundGradientFrom: '#8F6D82',
-          backgroundGradientTo: '#8F6D82',
+          backgroundColor: 'white',
+          backgroundGradientFrom: 'white',
+          backgroundGradientTo: 'white',
           decimalPlaces: 2, // optional, defaults to 2dp
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+          color: (opacity = 1) => `#8F6D82`,
+          labelColor: (opacity = 1) => `#8F6D82`,
           style: {
             borderRadius: 16,
           },

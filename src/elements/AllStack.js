@@ -6,28 +6,75 @@ import Activity from '../components/Activity';
 import CheckList from './activity/CheckList';
 import R5Info from './activity/R5Info';
 import {Image, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import SearchHeader from '../components/SearchHeader';
+import FeedsScreen from '../components/FeedsScreen';
+import CalendarScreen from '../components/CalendarScreen';
+import SearchScreen from '../components/SearchScreen';
+import WriteScreen from '../components/WriteScreen';
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarShowLabel: false,
+      }}>
       <Tab.Screen
-        name="녹색일기"
-        component={Information}
+        name="녹색일기 쓰기"
+        component={FeedsScreen}
         options={{
           tabBarIcon: ({focused}) =>
-            !focused ? (
+            focused ? (
               <Image
-                source={require('../assets/shared/diary_no.png')}
+                source={require('../assets/shared/pencil.png')}
                 style={{width: 30, height: 30}}
               />
             ) : (
               <Image
-                source={require('../assets/shared/diary.png')}
+                source={require('../assets/shared/pencil_no.png')}
                 style={{width: 30, height: 30}}
               />
             ),
+        }}
+      />
+      <Tab.Screen
+        name="달력"
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../assets/shared/diary.png')}
+                style={{width: 30, height: 30}}
+              />
+            ) : (
+              <Image
+                source={require('../assets/shared/diary_no.png')}
+                style={{width: 30, height: 30}}
+              />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          title: '검색',
+          tabBarIcon: ({focused}) =>
+            !focused ? (
+              <Image
+                source={require('../assets/shared/search_no.png')}
+                style={{width: 30, height: 30}}
+              />
+            ) : (
+              <Image
+                source={require('../assets/shared/search.png')}
+                style={{width: 30, height: 30}}
+              />
+            ),
+          headerTitle: () => <SearchHeader />,
         }}
       />
       <Tab.Screen
@@ -46,6 +93,7 @@ const BottomTabs = () => {
                 style={{width: 30, height: 30}}
               />
             ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -64,6 +112,7 @@ const BottomTabs = () => {
                 style={{width: 30, height: 30}}
               />
             ),
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
@@ -99,6 +148,13 @@ const AllStack = () => {
         options={{
           headerShown: true,
           headerTitle: '',
+        }}
+      />
+      <Stack.Screen
+        name="WriteScreen"
+        component={WriteScreen}
+        options={{
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
